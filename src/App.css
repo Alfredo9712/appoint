@@ -12,3 +12,6 @@ body {
 .opacity {
   opacity: 0.5;
 }
+.rbc-toolbar .rbc-toolbar-label {
+  margin-right: 50px;
+}

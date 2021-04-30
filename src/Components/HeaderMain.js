@@ -25,7 +25,7 @@ const HeaderMain = () => {
   const [companyDetails, loading] = useDocument(
     id && db.collection("companies").doc(id.toString())
   );
-
+  console.log(user.uid);
   let history = useHistory();
   const logoutHandler = () => {
     auth.signOut();
@@ -47,8 +47,7 @@ const HeaderMain = () => {
                 }
               >
                 <InnerHeaderLeftContainer>
-                  {companyDetails?.data().companyName}
-                  Dashboard
+                  {companyDetails?.data().companyName} Dashboard
                 </InnerHeaderLeftContainer>
               </Navbar.Brand>
             </HeaderLeftContainer>
@@ -108,8 +107,10 @@ const Show = styled.div`
 
 const HeaderComponentContainer = styled.div`
   background-color: #f7f7f7;
+
   font-family: Arial, Helvetica, sans-serif;
   padding-top: 6.8px;
+  /* background-color: #353535; */
 
   color: white !important;
 `;
@@ -119,6 +120,7 @@ const HeaderLeftContainer = styled.div`
 const InnerHeaderLeftContainer = styled.div`
   display: flex;
   color: #353535 !important;
+  /* color: #f7f7f7; */
   text-transform: capitalize;
   font-weight: 100 !important;
   /* font-family: "Lato", sans-serif; */

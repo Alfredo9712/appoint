@@ -9,7 +9,7 @@ import {
 } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./config/firebase";
-import WelcomeScreem from "./Components/Screens/WelcomeScreen";
+import WelcomeScreen from "./Components/Screens/WelcomeScreen";
 import { db } from "./config/firebase";
 import "react-big-calendar/lib/css/react-big-calendar.css";
 import { Spinner } from "react-bootstrap";
@@ -57,7 +57,7 @@ function App() {
                 {!companyId && <Redirect exact from="/" push to="/welcome" />}
 
                 <Route path="/welcome">
-                  <WelcomeScreem />
+                  <WelcomeScreen />
                 </Route>
                 <Route path="/companyScreen">
                   <CompanyScreen />
@@ -69,9 +69,11 @@ function App() {
           </>
         </Switch>
 
-        <Route path="/events/:companyName">
+        <Route path="/:companyName/:companyId" component={UserCalendarScreen} />
+
+        {/* <Route path="/events/:id">
           <UserCalendarScreen />
-        </Route>
+        </Route> */}
       </Router>
     </>
   );

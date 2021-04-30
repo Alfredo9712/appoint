@@ -10,7 +10,7 @@ import styled from "styled-components";
 import { useSelector } from "react-redux";
 import SidebarOptions from "./SidebarOptions";
 
-const Sidebar = () => {
+const Sidebar = ({ user }) => {
   const id = useSelector((state) => state.id);
 
   return (
@@ -39,7 +39,7 @@ const SidebarContainer = styled.div`
   display: flex;
   flex-direction: column;
   /* background-color: #333333; */
-  /* background-color: #353535; */
+
   background-color: #f7f7f7;
 
   height: 100vh;

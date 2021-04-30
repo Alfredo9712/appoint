@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Button } from "@material-ui/core";
 import { db } from "../config/firebase";
-import uuid from "react-uuid";
+// import uuid from "react-uuid";
+import uniqid from "uniqid";
+
 import { useHistory } from "react-router-dom";
 
 import { useDispatch } from "react-redux";
@@ -82,7 +84,7 @@ const ComForm = ({ user }) => {
               onClick={(e) =>
                 addCompany(e, {
                   companyName: name,
-                  id: uuid(),
+                  id: uniqid(),
                   passcode: Number(passcode),
                 })
               }

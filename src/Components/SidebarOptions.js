@@ -44,6 +44,7 @@ const Container = styled.div`
     /* background-color: #353535; */
     background-color: #f7f7f7;
     color: #353535;
+    /* color: #f7f7f7; */
     outline: none;
     border: none;
     font-weight: 400;

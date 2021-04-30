@@ -9,7 +9,6 @@ import HeaderMain from "../HeaderMain";
 import CreateAppointmentScreen from "./CreateAppointmentScreen";
 
 const CompanyScreen = () => {
-  console.log();
   return (
     <>
       <HeaderMain />

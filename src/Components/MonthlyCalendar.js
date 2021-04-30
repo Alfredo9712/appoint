@@ -41,35 +41,36 @@ const MonthlyCalendar = () => {
         ""
       ) : (
         <Container style={{ maxWidth: "80%" }}>
-          {events?.docs.length !== 0 ? (
-            <Calendar
-              localizer={localizer}
-              onSelectEvent={(event, e) => {
-                console.log(event.id);
-              }}
-              view={view.view}
-              onView={() => {}}
-              events={eventsArray}
-              views={{
-                day: true,
-                month: true,
-              }}
-              startAccessor="start"
-              eventPropGetter={(event) => ({
-                style: {
-                  backgroundColor: " #404040",
-                },
-              })}
-              endAccessor="end"
-              style={{ height: width > 700 ? 720 : 400 }}
-              onNavigate={(date) => setView({ date })}
-            />
+          {events?.docs.length === 0 ? (
+            <h5 className="text-muted">No appointments made</h5>
           ) : (
-            <NoEventsScreen />
+            ""
           )}
+          <Calendar
+            localizer={localizer}
+            onSelectEvent={(event, e) => {
+              console.log(event.id);
+            }}
+            view={view.view}
+            onView={() => {}}
+            events={eventsArray}
+            views={{
+              day: true,
+              month: true,
+            }}
+            startAccessor="start"
+            eventPropGetter={(event) => ({
+              style: {
+                backgroundColor: " #404040",
+              },
+            })}
+            endAccessor="end"
+            style={{ height: width > 700 ? 720 : 400 }}
+            onNavigate={(date) => setView({ date })}
+          />
 
-          <Button onClick={() => setView({ view: "month" })}>Month</Button>
-          <Button onClick={() => setView({ view: "day" })}>Day</Button>
+          {/* <Button onClick={() => setView({ view: "month" })}>Month</Button>
+          <Button onClick={() => setView({ view: "day" })}>Day</Button> */}
         </Container>
       )}
     </>

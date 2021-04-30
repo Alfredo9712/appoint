@@ -3,7 +3,8 @@ import DatePicker, { setDefaultLocale } from "react-datepicker";
 import { Form, Button, Row, Col, Alert } from "react-bootstrap";
 import styled from "styled-components";
 import "react-datepicker/dist/react-datepicker.css";
-import uuid from "react-uuid";
+
+import uniqid from "uniqid";
 import { useCollection } from "react-firebase-hooks/firestore";
 import { db } from "../../config/firebase";
 import { useSelector } from "react-redux";
@@ -17,9 +18,9 @@ const CreateAppointmentScreen = () => {
   const [added, setAdded] = useState(false);
   const [alertResponse, setAlertResponse] = useState("");
   const [variant, setVariant] = useState("");
-  const [events, loading] = useCollection(
-    db.collection("companies").doc("0").collection("appointment")
-  );
+  // const [events, loading] = useCollection(
+  //   db.collection("companies").doc("0").collection("appointment")
+  // );
   const addAppointmentHandler = (e, event) => {
     e.preventDefault();
     if (startDate === undefined || endDate === undefined || title === "") {
@@ -132,7 +133,7 @@ const CreateAppointmentScreen = () => {
           type="submit"
           onClick={(e) =>
             addAppointmentHandler(e, {
-              id: uuid(),
+              id: uniqid(),
               title,
               start: startDate,
               end: endDate,
