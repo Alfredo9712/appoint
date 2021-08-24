@@ -31,10 +31,7 @@ const MonthlyCalendar = () => {
       end: new Date(end?.toDate()),
     });
   });
-  // console.log("real");
-  // console.log(eventsArray[0]);
-  // console.log("fake");
-  // console.log(fakeEvents[0]);
+
   return (
     <>
       {loading ? (

@@ -23,7 +23,7 @@ const Sidebar = ({ user }) => {
           text={"Booked"}
           route={"booked"}
         />
-        <SidebarOptions Icon={CalendarToday} text={"View"} route={"calendar"} />
+        {/* <SidebarOptions Icon={CalendarToday} text={"View"} route={"calendar"} /> */}
       </SidebarContainer>
     </>
   );

@@ -46,7 +46,7 @@ const BookAppointmentModal = ({ show, setShow, event, companyName, id }) => {
 
     companyCollection
       .doc(id)
-      .collection("bookedAppoinments")
+      .collection("bookedAppointments")
       .doc(event.id)
       .set(bookedInformation)
       .catch((err) => {
@@ -69,10 +69,10 @@ const BookAppointmentModal = ({ show, setShow, event, companyName, id }) => {
     setEmail("");
     emailjs
       .send(
-        "service_5c04ati",
-        "template_nn5o0gl",
+        "service_y55amaa",
+        "template_8pzhetc",
         params,
-        "user_pxWgUF2mBdMOMjkVROSnG"
+        "user_bPHPNlrbknTijbPB1xU95"
       )
       .then(
         (result) => {

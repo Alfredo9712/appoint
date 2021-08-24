@@ -25,7 +25,7 @@ const HeaderMain = () => {
   const [companyDetails, loading] = useDocument(
     id && db.collection("companies").doc(id.toString())
   );
-  console.log(user.uid);
+
   let history = useHistory();
   const logoutHandler = () => {
     auth.signOut();

@@ -7,6 +7,7 @@ import Sidebar from "../Sidebar";
 import MonthlyCalendar from "../MonthlyCalendar";
 import HeaderMain from "../HeaderMain";
 import CreateAppointmentScreen from "./CreateAppointmentScreen";
+import BookedAppointments from "./BookedAppointments";
 
 const CompanyScreen = () => {
   return (
@@ -18,10 +19,13 @@ const CompanyScreen = () => {
             <Sidebar />
           </SidebarContainer>
           <Switch>
+            <Route path="/booked">
+              <BookedAppointments />
+            </Route>
             <Route path="/create">
               <CreateAppointmentScreen />
             </Route>
-            <Route path="/calendar">
+            <Route path="/companyScreen">
               <MonthlyCalendar />
             </Route>
             <Route path="/create">
